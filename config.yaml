@@ -1,0 +1,21 @@
+embedding:
+  # 多語言模型，支援中文
+  model: paraphrase-multilingual-MiniLM-L12-v2
+  device: cpu  # 改為 cuda 可使用 GPU 加速
+
+chunking:
+  chunk_size: 500       # 每個 chunk 的字元數
+  chunk_overlap: 50     # chunk 之間的重疊字元數
+
+retrieval:
+  top_k: 5             # 返回最相關的前 N 個結果
+  score_threshold: 0.0  # 相似度閾值（0~1，越高越嚴格）
+
+knowledge_base:
+  persist_directory: ./knowledge_base  # ChromaDB 儲存路徑
+  collection_name: rag_documents
+
+server:
+  host: 0.0.0.0
+  port: 7860
+  share: false  # 設為 true 可產生公開分享連結
