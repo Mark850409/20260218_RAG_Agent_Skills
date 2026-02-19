@@ -31,7 +31,7 @@ env/
 # RAG 知識庫向量資料（ChromaDB）
 # ===========================
 rag_knowledge_base/knowledge_base/
-
+knowledge_base/
 # ===========================
 # Sentence Transformers 模型快取
 # ===========================

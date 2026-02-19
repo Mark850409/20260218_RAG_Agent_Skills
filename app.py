@@ -12,6 +12,14 @@ from pathlib import Path
 ROOT_DIR = Path(__file__).parent
 sys.path.insert(0, str(ROOT_DIR))
 
+# 主動讀取 SKILL.md，確保 OpenClaw 能取得技能說明
+_skill_md_path = ROOT_DIR / "SKILL.md"
+if _skill_md_path.exists():
+    with open(_skill_md_path, "r", encoding="utf-8") as f:
+        skill_info = f.read()
+else:
+    skill_info = ""
+
 import gradio as gr
 import yaml
 
